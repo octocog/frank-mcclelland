@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Frank McClelland</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root{
+  --paper:#F2EFE8; --paper-2:#EAE6DC; --card:#FBFAF6;
+  --ink:#1C1A17; --ink2:#55504A; --ink3:#857E74;
+  --olive:#667542; --olive-dk:#5C6A3C; --olive-pale:#E6E8DC;
+  --gold:#A98B3F; --rule:#D8D2C6;
+  --f-dis:Fraunces,Georgia,serif; --f-body:"EB Garamond",Georgia,serif;
+  --wrap:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);
+  font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 76px}
+.bleed{width:100vw;margin-left:calc(50% - 50vw)}
+.lab{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink3)}
+.lab.olive{color:var(--olive-dk)}
+.lab.on-img{color:var(--gold)}
+.rule-g{width:54px;height:1px;background:var(--gold)}
+h1,h2,h3,h4{font-family:var(--f-dis);font-weight:300;margin:0;letter-spacing:-.012em;text-wrap:balance}
+p{margin:0 0 1em}
+:focus-visible{outline:2px solid var(--olive);outline-offset:3px}
+
+/* masthead */
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:24px;
+  padding:30px 76px 18px;max-width:var(--wrap);margin:0 auto}
+.top .nm{font-family:var(--f-dis);font-weight:400;font-size:21px}
+.nav{display:flex;gap:26px}
+.nav a{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink2);text-decoration:none}
+.nav a:hover{color:var(--olive-dk)}
+
+/* hero: statement, then a full-bleed plate */
+.hero-txt{padding:52px 0 44px;max-width:900px}
+.hero-txt h1{font-size:clamp(42px,5.6vw,80px);line-height:1.02}
+.hero-txt h1 em{font-style:italic;color:var(--olive)}
+.hero-txt .lede{font-size:22px;line-height:1.55;color:var(--ink2);margin:26px 0 0;max-width:44ch}
+.hero-plate{position:relative}
+.hero-plate img{width:100%;height:78vh;min-height:520px;max-height:860px;object-fit:cover;object-position:center 38%}
+.hero-cap{max-width:var(--wrap);margin:0 auto;padding:11px 76px 0;
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3)}
+.hero-cap b{color:var(--gold);font-weight:400;margin-right:14px}
+
+/* full-bleed media bands */
+.band{position:relative;min-height:620px;display:flex;align-items:center;
+  background-size:cover;background-position:center}
+.band .inner{max-width:var(--wrap);margin:0 auto;padding:0 76px;width:100%;display:flex}
+.band.right .inner{justify-content:flex-end}
+.panel{background:rgba(250,249,245,.955);padding:44px 46px 46px;max-width:452px;
+  box-shadow:0 20px 60px rgba(28,26,23,.2)}
+.panel .n{font-size:11px;letter-spacing:.24em;color:var(--gold);text-transform:uppercase}
+.panel h2{font-size:46px;color:var(--olive);margin:8px 0 0;font-weight:400;line-height:1}
+.panel p{font-size:17.5px;color:var(--ink2);margin:16px 0 0}
+.panel .fact{margin-top:20px;padding-top:16px;border-top:1px solid var(--rule);
+  font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
+
+/* L'Espalier: the one work with no surviving imagery */
+.lesp{background:var(--card);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  padding:76px 0 80px}
+.lesp .inner{max-width:var(--wrap);margin:0 auto;padding:0 76px}
+.lesp .yr{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.lesp h3{font-family:var(--f-dis);font-weight:300;font-size:clamp(46px,6.2vw,88px);line-height:1;margin:14px 0 0}
+.lesp .role{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--olive-dk);margin:14px 0 18px}
+.lesp .body{font-size:19px;color:var(--ink2);max-width:56ch;margin:0}
+.lesp .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:36px;margin-top:44px;
+  border-top:1px solid var(--rule);padding-top:28px}
+.lesp .stats .f{display:block;font-family:var(--f-dis);font-weight:300;font-size:50px;
+  line-height:1;color:var(--olive)}
+.lesp .stats .l{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink3);margin-top:10px;line-height:1.6}
+
+/* biography */
+.bio{display:grid;grid-template-columns:.78fr 1.22fr;gap:56px;align-items:center;padding:78px 0 74px}
+.bio-img img{width:100%;height:520px;object-fit:cover;object-position:center 22%}
+.bio-txt p{font-size:18.5px;color:var(--ink2);margin:0 0 1.05em;max-width:58ch}
+.bio-txt p.lab{margin-bottom:18px}
+.bio-txt em{font-style:italic}
+.bio-txt .bio-last{color:var(--ink);font-family:var(--f-dis);font-weight:300;font-size:23px;
+  line-height:1.4;margin-top:24px;padding-top:22px;border-top:1px solid var(--rule);max-width:46ch}
+
+/* lineage: quiet type break between image bands */
+.lineage{background:var(--olive-pale);padding:72px 0 74px}
+.lineage .inner{max-width:var(--wrap);margin:0 auto;padding:0 76px;text-align:center}
+.lineage blockquote{margin:16px auto 0;font-family:var(--f-dis);font-weight:300;
+  font-size:clamp(26px,3.1vw,40px);line-height:1.22;max-width:21ch;letter-spacing:-.012em}
+.lineage p{font-size:18px;color:var(--ink2);margin:24px auto 0;max-width:62ch}
+.lineage .names{color:var(--olive-dk);font-style:italic}
+
+/* works: image-led, not tabular */
+section{padding:70px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:24px;margin-bottom:34px}
+.sec-head h2{font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink2);font-weight:400}
+.work-big{display:grid;grid-template-columns:1.12fr .88fr;gap:0;align-items:stretch;margin-bottom:22px}
+.work-big.flip > .wb-img{order:2}
+.work-big .wb-img img{width:100%;height:100%;min-height:430px;object-fit:cover}
+.work-big .wb-txt{background:var(--card);padding:54px 60px;display:flex;flex-direction:column;justify-content:center}
+.work-big h3{font-size:44px;font-weight:400;line-height:1}
+.work-big .role{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--olive-dk);margin:12px 0 14px}
+.work-big p{margin:0;color:var(--ink2);font-size:17.5px;max-width:40ch}
+.work-big .yr{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+
+/* smaller works row */
+.work-row{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:22px}
+.work-row .c img{width:100%;height:260px;object-fit:cover}
+.work-row .c img.bookcov{object-fit:contain;background:var(--paper-2);padding:14px}
+.work-row .c .noimg{height:260px;background:var(--paper-2);display:flex;align-items:center;
+  justify-content:center;text-align:center;padding:0 20px;font-size:10px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink3)}
+.work-row h3{font-size:27px;font-weight:400;margin-top:16px}
+.work-row .role{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--olive-dk);margin:6px 0 8px}
+.work-row p{font-size:16px;color:var(--ink2);margin:0}
+
+/* mosaic */
+.mosaic{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.mosaic img{width:100%;height:270px;object-fit:cover}
+.mosaic .tall{grid-row:span 2;height:540px}
+.mosaic .tall img{height:540px}
+
+/* recognition over an image */
+.rec-band{position:relative;background-size:cover;background-position:center 60%;padding:84px 0}
+.rec-wrap{max-width:var(--wrap);margin:0 auto;padding:0 76px}
+.rec-card{background:rgba(250,249,245,.96);padding:46px 50px 40px;max-width:720px;
+  box-shadow:0 20px 60px rgba(28,26,23,.2)}
+.rec-card h2{font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink2);
+  font-weight:400;margin-bottom:22px}
+.rec-card div.r{display:grid;grid-template-columns:118px 1fr;gap:18px;padding:12px 0;
+  border-top:1px solid var(--rule);align-items:baseline}
+.rec-card .y{font-size:13px;letter-spacing:.14em;color:var(--gold)}
+.rec-card .t{font-size:17px;color:var(--ink2)}
+.rec-card .t b{color:var(--ink);font-weight:500}
+
+/* now */
+.now{padding:78px 0 84px}
+.now h2{font-size:clamp(32px,4.2vw,54px);line-height:1.08;max-width:19ch}
+.now h2 em{font-style:italic;color:var(--olive)}
+.now .lede{font-size:20px;color:var(--ink2);max-width:58ch;margin:22px 0 0}
+.asks.one{grid-template-columns:1fr;max-width:62ch}
+.asks{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;margin-top:46px;
+  border-top:1px solid var(--rule);padding-top:32px}
+.asks h3{font-size:26px;font-weight:400;color:var(--olive)}
+.asks p{font-size:16.5px;color:var(--ink2);margin:8px 0 0}
+
+.reach{margin-top:46px;border-top:1px solid var(--rule);padding-top:30px;
+  display:flex;align-items:baseline;gap:26px;flex-wrap:wrap}
+.reach .mail{font-family:var(--f-dis);font-weight:300;font-size:clamp(26px,3vw,38px);
+  color:var(--olive);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:4px}
+.reach .mail:hover{color:var(--ink);border-bottom-color:var(--olive)}
+.reach-note{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink3)}
+.reach .todo{flex-basis:100%}
+footer{border-top:1px solid var(--rule);padding:28px 0 54px}
+.frow{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
+
+.todo{background:#FBF2E4;border-left:3px solid var(--gold);padding:12px 16px;margin:14px 0 0;
+  font-size:13px;color:#7A5E22;text-transform:none;letter-spacing:0}
+.todo b{letter-spacing:.14em;text-transform:uppercase;font-size:10px;display:block;margin-bottom:3px}
+
+@media (max-width:980px){
+  .wrap,.top,.band .inner,.lineage .inner,.rec-wrap{padding-left:26px;padding-right:26px}
+  .hero-plate img{height:52vh;min-height:360px}
+  .band{min-height:0;padding:70px 0}
+  .panel{max-width:none}
+  .work-big,.bio{grid-template-columns:1fr}
+  .bio-img img{height:340px}
+  .lesp .stats{grid-template-columns:repeat(2,1fr);gap:26px}
+  .work-big.flip > .wb-img{order:0}
+  .work-big .wb-img img{min-height:300px}
+  .work-row,.asks{grid-template-columns:1fr;gap:30px}
+  .mosaic{grid-template-columns:repeat(2,1fr)}
+  .mosaic .tall,.mosaic .tall img{grid-row:auto;height:270px}
+}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <span class="nm">Frank McClelland</span>
+  <nav class="nav"><a href="#media">The work</a><a href="#works">Catalog</a>
+    <a href="#recognition">Recognition</a><a href="#now">Now</a></nav>
+</div>
+
+<div class="wrap">
+  <div class="hero-txt">
+    <p class="lab olive">Atelier &nbsp;·&nbsp; Essex, Massachusetts</p>
+    <h1 style="margin-top:18px">An artist who works in food, hospitality and <em>cultivation</em>.</h1>
+    <p class="lede">Forty five years of one vision, carried forward by different vehicles.
+      The passion has never changed. Only the expression.</p>
+  </div>
+</div>
+<div class="hero-plate bleed">
+  <img src="img/hero-wide.jpg" alt="Frank McClelland among the tomato rows at Apple Street Farm">
+</div>
+<p class="hero-cap"><b>Pl. I</b>Apple Street Farm, Essex, Massachusetts</p>
+
+<div id="media"></div>
+
+<div class="band bleed" style="background-image:url('img/band-bread.jpg')">
+  <div class="inner"><div class="panel">
+    <span class="n">Expression i</span>
+    <h2>Food</h2>
+    <p>Classical French technique turned on New England ingredients. Four decades of using plates
+      as canvases. There is a reason anyone who knows Frank knows that &ldquo;Art Department&rdquo;
+      is how he refers to the kitchen and everyone who works in it.</p>
+    <p class="fact">James Beard Award &nbsp;·&nbsp; Best Chef Northeast &nbsp;·&nbsp; 2007</p>
+  </div></div>
+</div>
+
+<div class="band bleed right" style="background-image:url('img/band-cm.jpg')">
+  <div class="inner"><div class="panel">
+    <span class="n">Expression ii</span>
+    <h2>Hospitality</h2>
+    <p>Three decades of creating rooms people chose for the nights that mattered. Years dedicated
+      to designing experiences that changed how people feel.</p>
+    <p class="fact">Nineteen consecutive AAA Five Diamond years</p>
+  </div></div>
+</div>
+
+<div class="band bleed" style="background-image:url('img/band-harvest.jpg')">
+  <div class="inner"><div class="panel">
+    <span class="n">Expression iii</span>
+    <h2>Cultivation</h2>
+    <p>He owned the farm, planted the field and oversaw the harvest himself, then sent it down the
+      road to his own pass. Chef. Farmer.</p>
+    <p class="fact">Apple Street Farm &nbsp;·&nbsp; Essex, Massachusetts</p>
+  </div></div>
+</div>
+
+<div class="wrap">
+  <section class="bio" id="bio">
+    <div class="bio-img">
+      <img src="img/portrait-farmstand.jpg" alt="Frank McClelland at a farm stand in Essex">
+    </div>
+    <div class="bio-txt">
+      <p class="lab olive">Biography</p>
+      <p>Frank McClelland has spent forty five years cooking in New England. He came up through
+        Harvest in Harvard Square, the Cambridge kitchen that produced a generation of Boston chefs,
+        and in 1988 took over L&rsquo;Espalier.</p>
+      <p>Over the next thirty years he made it the restaurant Boston measured others against: a James
+        Beard Award for Best Chef Northeast in 2007, nineteen consecutive AAA Five Diamond awards,
+        and a Mobil Four Star rating every year from 1998 until the room closed in 2018.</p>
+      <p>What separated him was the field behind the plate. At Apple Street Farm in Essex he grew a
+        large share of what his own kitchen cooked, years before provenance became a line on a menu.
+        Along the way he opened Sel de la Terre, published <em>Wine Mondays</em>, and built FRANK in
+        Beverly as a market, restaurant and shop.</p>
+      <p class="bio-last">He lives in Essex, Massachusetts, and still calls the kitchen the Art
+        Department.</p>
+    </div>
+  </section>
+</div>
+
+<div class="lineage bleed">
+  <div class="inner">
+    <p class="lab olive">Lineage</p>
+    <blockquote>He grew up in the kitchen that produced a generation of Boston cooking.</blockquote>
+    <p>The alumni of Harvest in Harvard Square read like a founding document for the modern Boston
+      restaurant: <span class="names">Lydia Shire, Barbara Lynch, Jasper White, Bob Kinkead,
+      Sara Moulton, Chris Schlesinger</span> &mdash; and Frank McClelland.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section id="works" style="padding-bottom:28px">
+    <div class="sec-head"><h2>Catalog of works</h2><span class="lab">Selected</span></div>
+  </section>
+</div>
+
+<div class="lesp bleed">
+  <div class="inner">
+    <span class="yr">1988 &ndash; 2018 &nbsp;·&nbsp; Boston</span>
+    <h3>L&rsquo;Espalier</h3>
+    <p class="role">Chef &amp; Proprietor</p>
+    <p class="body">Thirty years at the restaurant that set the standard for fine dining in Boston.
+      A room people booked months out for the night that mattered.</p>
+    <div class="stats">
+      <div><span class="f">30</span><span class="l">years as chef<br>and proprietor</span></div>
+      <div><span class="f">19</span><span class="l">consecutive AAA<br>Five Diamond years</span></div>
+      <div><span class="f">21</span><span class="l">straight years of<br>Mobil Four Star</span></div>
+      <div><span class="f">2007</span><span class="l">James Beard Award<br>Best Chef Northeast</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="work-big bleed flip">
+  <div class="wb-img"><img src="img/band-roast.jpg" alt="Cooking outdoors at the farm"></div>
+  <div class="wb-txt">
+    <span class="yr">Essex, Massachusetts</span>
+    <h3 style="margin-top:10px">Apple Street Farm</h3>
+    <p class="role">Owner &amp; Farmer</p>
+    <p>A working farm that grew a large share of what arrived on the plate at L&rsquo;Espalier, in a
+      field he owned, planted and picked, and a supper club that brought guests out to eat where it
+      was grown.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="work-row">
+    <div class="c">
+      <img src="img/pass-whites.jpg" alt="Frank McClelland in chef whites at the pass">
+      <h3>Sel de la Terre</h3><p class="role">Chef &amp; Owner &nbsp;·&nbsp; Boston</p>
+      <p>The casual counterpart to L&rsquo;Espalier. French bistro cooking and a boulangerie, built
+        to reach people on a weekday rather than an anniversary.</p>
+    </div>
+    <div class="c">
+      <img class="bookcov" src="img/book-wine-mondays.jpg" alt="Wine Mondays book cover">
+      <h3>Wine Mondays</h3><p class="role">With Christie Matheson &nbsp;·&nbsp; Harvard Common Press, 2008</p>
+      <p>Simple wine pairings with seasonal menus, built from the long running Monday night wine dinners at L&rsquo;Espalier.</p>
+    </div>
+    <div class="c">
+      <img src="img/room-windowseat.jpg" alt="The dining room at FRANK, Beverly">
+      <h3>FRANK</h3><p class="role">Chef &amp; Owner &nbsp;·&nbsp; Beverly, 2019&ndash;2023</p>
+      <p>Restaurant, market and shop. Food made daily in a scratch kitchen.</p>
+    </div>
+  </div>
+</div>
+
+<div class="mosaic bleed" style="margin-top:58px">
+  <img src="img/band-dessert.jpg" alt="Plated dessert">
+  <img src="img/band-firepit.jpg" alt="Fire pit on the shore">
+  <img src="img/band-notebook.jpg" alt="Handwritten menu notebook">
+  <img src="img/band-lobster.jpg" alt="Lobster roll">
+</div>
+
+<div class="rec-band bleed" id="recognition" style="background-image:url('img/fire-fish.jpg')">
+  <div class="rec-wrap"><div class="rec-card">
+    <h2>Recognition</h2>
+    <div class="r"><span class="y">2007</span><span class="t"><b>James Beard Award</b>, Best Chef: Northeast</span></div>
+    <div class="r"><span class="y">2000&ndash;2018</span><span class="t"><b>AAA Five Diamond</b>, nineteen consecutive years</span></div>
+    <div class="r"><span class="y">1998&ndash;2018</span><span class="t"><b>Mobil Four Star</b>, awarded every year</span></div>
+    <div class="r"><span class="y">1986</span><span class="t"><b>Food &amp; Wine</b>, top 25 new chefs to watch</span></div>
+    <div class="r"><span class="y">2008</span><span class="t"><b>Wine Mondays</b>, Harvard Common Press</span></div>
+  </div></div>
+</div>
+
+<div class="wrap">
+  <section class="now" id="now">
+    <p class="lab olive">Now</p>
+    <h2 style="margin-top:16px">The art has never changed. Only the <em>canvas</em>.</h2>
+    <p class="lede">Every business he has built has been a way to carry the same argument into the
+      world: that food is better when you know where it came from, and best when you grew it
+      yourself. Frank is looking for the next canvas.</p>
+    <div class="asks one">
+      <div><h3>Consulting &amp; Cooking</h3><p>Menu, kitchen, sourcing and operations for restaurants
+        and food businesses that want the standard without the guesswork. Or cooking and catering for
+        you and your guests.</p></div>
+    </div>
+    <div class="reach">
+      <span class="lab olive">Enquiries</span>
+      <a class="mail" href="mailto:hello@example.com">hello@example.com</a>
+      <span class="reach-note">Essex, Massachusetts</span>
+      <div class="todo"><b>Draft note</b>Contact address is a placeholder for now.</div>
+    </div>
+  </section>
+</div>
+
+<footer><div class="wrap"><div class="frow">
+  <span>Frank McClelland &nbsp;·&nbsp; Essex, Massachusetts</span>
+  <span>Chef &nbsp;·&nbsp; Farmer &nbsp;·&nbsp; Restaurateur</span>
+  <span>Contact to be added</span>
+</div></div></footer>
+
+</body>
+</html>
