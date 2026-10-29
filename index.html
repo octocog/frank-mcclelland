@@ -123,6 +123,18 @@ p{margin:0 0 1em}
 .lineage p{font-size:18px;color:var(--ink2);margin:24px auto 0;max-width:62ch}
 .lineage .names{color:var(--olive-dk);font-style:italic}
 
+/* credo: the obligation that follows recognition */
+.credo{background:var(--card);padding:88px 0 90px;border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule)}
+.credo .inner{max-width:var(--wrap);margin:0 auto;padding:0 76px;text-align:center}
+.credo .mk{width:44px;height:1px;background:var(--gold);margin:0 auto 32px}
+.credo blockquote{margin:0 auto;font-family:var(--f-dis);font-weight:300;font-style:italic;
+  font-size:clamp(23px,2.85vw,37px);line-height:1.27;max-width:28ch;letter-spacing:-.014em;
+  color:var(--ink)}
+.credo .src{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--olive-dk);
+  margin:30px auto 0}
+.credo .src i{font-style:normal;color:var(--ink3);letter-spacing:.14em}
+
 /* works: image-led, not tabular */
 section{padding:70px 0}
 .sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:24px;margin-bottom:34px}
@@ -189,7 +201,7 @@ section{padding:70px 0}
 
 
 @media (max-width:980px){
-  .wrap,.top,.band .inner,.lineage .inner,.rec-wrap{padding-left:26px;padding-right:26px}
+  .wrap,.top,.band .inner,.lineage .inner,.credo .inner,.rec-wrap{padding-left:26px;padding-right:26px}
   .hero-plate img{height:52vh;min-height:360px}
   .band{min-height:0;padding:70px 0}
   .panel{max-width:none}
@@ -390,6 +402,15 @@ section{padding:70px 0}
     <div class="r"><span class="y">1986</span><span class="t"><b>Food &amp; Wine</b>, top 25 new chefs to watch</span></div>
     <div class="r"><span class="y">2008</span><span class="t"><b>Wine Mondays</b>, Harvard Common Press</span></div>
   </div></div>
+</div>
+
+<div class="credo bleed">
+  <div class="inner">
+    <div class="mk"></div>
+    <blockquote>The duty of a good cuisinier is to transmit to the next generation everything he
+      has learned and experienced&hellip;</blockquote>
+    <p class="src">Fernand Point <i>La Pyramide, Vienne</i></p>
+  </div>
 </div>
 
 <div class="wrap">
