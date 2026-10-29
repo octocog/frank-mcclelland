@@ -207,12 +207,29 @@ section{padding:70px 0}
 .asks h3{font-size:26px;font-weight:400;color:var(--olive)}
 .asks p{font-size:16.5px;color:var(--ink2);margin:8px 0 0}
 
-.reach{margin-top:46px;border-top:1px solid var(--rule);padding-top:30px;
-  display:flex;align-items:baseline;gap:26px;flex-wrap:wrap}
-.reach .mail{font-family:var(--f-dis);font-weight:300;font-size:clamp(26px,3vw,38px);
-  color:var(--olive);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:4px}
-.reach .mail:hover{color:var(--ink);border-bottom-color:var(--olive)}
+.reach{margin-top:46px;border-top:1px solid var(--rule);padding-top:34px;
+  display:grid;grid-template-columns:.82fr 1.18fr;gap:52px;align-items:start}
+.reach-lead{font-family:var(--f-dis);font-weight:300;font-size:clamp(20px,2.1vw,28px);
+  line-height:1.3;color:var(--ink);margin:16px 0 18px;max-width:23ch;letter-spacing:-.01em}
 .reach-note{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink3)}
+.ct-form{display:grid;gap:17px;position:relative}
+.ct-form label{display:grid;gap:7px;font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink3)}
+.ct-form input,.ct-form textarea{font-family:var(--f-body);font-size:17px;line-height:1.5;
+  color:var(--ink);background:var(--card);border:1px solid var(--rule);border-radius:0;
+  padding:12px 14px;width:100%;transition:border-color .15s}
+.ct-form input::placeholder,.ct-form textarea::placeholder{color:var(--ink3);opacity:.7}
+.ct-form input:focus,.ct-form textarea:focus{outline:none;border-color:var(--olive)}
+.ct-form textarea{resize:vertical;min-height:116px}
+.ct-form .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.btn{justify-self:start;font-family:var(--f-dis);font-weight:400;font-size:13px;
+  letter-spacing:.18em;text-transform:uppercase;background:var(--olive);color:var(--paper);
+  border:0;padding:14px 32px;cursor:pointer;transition:background .15s}
+.btn:hover{background:var(--olive-dk)}
+.btn:disabled{opacity:.55;cursor:default}
+.ct-msg{margin:0;font-size:15px;line-height:1.5;color:var(--ink2);min-height:1.3em}
+.ct-msg.bad{color:var(--red)}
+.ct-msg.ok{color:var(--olive-dk)}
 footer{background:var(--olive);color:var(--paper);margin-top:30px;padding:0 0 52px}
 .sign{text-align:center;padding:52px 0 34px}
 .sign img{width:clamp(104px,11vw,138px);height:auto;display:inline-block}
@@ -235,6 +252,7 @@ footer{background:var(--olive);color:var(--paper);margin-top:30px;padding:0 0 52
   .work-big.flip > .wb-img{order:0}
   .work-big .wb-img img{min-height:300px}
   .work-row,.asks{grid-template-columns:1fr;gap:30px}
+  .reach{grid-template-columns:1fr;gap:30px}
   .mosaic{grid-template-columns:repeat(2,1fr)}
   .mosaic .tall,.mosaic .tall img{grid-row:auto;height:270px}
 }
@@ -474,9 +492,24 @@ footer{background:var(--olive);color:var(--paper);margin-top:30px;padding:0 0 52
         you and your guests.</p></div>
     </div>
     <div class="reach">
-      <span class="lab olive">Enquiries</span>
-      <a class="mail" href="mailto:hello@example.com">hello@example.com</a>
-      <span class="reach-note">Essex, Massachusetts</span>
+      <div class="reach-head">
+        <span class="lab olive">Enquiries</span>
+        <p class="reach-lead">Consulting, cooking, press and publishing.</p>
+        <span class="reach-note">Essex, Massachusetts</span>
+      </div>
+      <form class="ct-form" id="contact" novalidate>
+        <label for="ct-name">Your name
+          <input id="ct-name" type="text" name="name" autocomplete="name" placeholder="First and last" required></label>
+        <label for="ct-email">Your email
+          <input id="ct-email" type="email" name="email" autocomplete="email" placeholder="you@example.com" required></label>
+        <label for="ct-subject">What this is about
+          <input id="ct-subject" type="text" name="subject" placeholder="Consulting, an event, a book, press" required></label>
+        <label for="ct-message">Your message
+          <textarea id="ct-message" name="message" rows="5" placeholder="A few lines is plenty"></textarea></label>
+        <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn" type="submit">Send</button>
+        <p class="ct-msg" id="ct-msg" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </section>
 </div>
@@ -491,5 +524,60 @@ footer{background:var(--olive);color:var(--paper);margin-top:30px;padding:0 0 52
   </div></div>
 </footer>
 
+<script>
+/* ---------------------------------------------------------------------
+   Frank's address is never published in this page. The form posts to
+   Formspree, which holds the destination address in its dashboard and
+   relays the message. Paste the Formspree form id below (the last part
+   of the endpoint, e.g. "mjygjrvw").
+   Verified from a real browser: Formspree answers CORS preflight.
+   FormSubmit and Web3Forms do not, so do not swap to those.
+   --------------------------------------------------------------------- */
+var FORMSPREE_ID = "";
+var RELAY = FORMSPREE_ID ? "https://formspree.io/f/" + FORMSPREE_ID : "";
+
+(function () {
+  var f = document.getElementById("contact"), m = document.getElementById("ct-msg");
+  if (!f) return;
+  function say(t, kind) { m.textContent = t; m.className = "ct-msg " + (kind || ""); }
+
+  f.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (f._honey.value) return;
+    var name = f.name.value.trim(), mail = f.email.value.trim(),
+        subj = f.subject.value.trim(), body = f.message.value.trim();
+
+    if (!name) { say("Mind adding your name?", "bad"); f.name.focus(); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)) {
+      say("That email does not look right. Mind checking it?", "bad"); f.email.focus(); return; }
+    if (!subj) { say("Add a line about what this is regarding.", "bad"); f.subject.focus(); return; }
+    if (!RELAY) {
+      say("This form goes live as soon as the mailbox is set up. Nothing has been sent.", "bad");
+      return;
+    }
+
+    var btn = f.querySelector("button[type=submit]");
+    btn.disabled = true; btn.textContent = "Sending";
+    say("");
+
+    fetch(RELAY, {
+      method: "POST",
+      headers: { "Accept": "application/json", "Content-Type": "application/json" },
+      body: JSON.stringify({ name: name, email: mail, message: body,
+                             _subject: "[Atelier] " + subj })
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (j) {
+        if (!r.ok) throw new Error((j.errors && j.errors[0] && j.errors[0].message) || r.status);
+      });
+    }).then(function () {
+      f.reset(); say("Thank you. That is on its way to Frank.", "ok");
+    }).catch(function () {
+      say("That did not send. Please try again in a moment.", "bad");
+    }).then(function () {
+      btn.disabled = false; btn.textContent = "Send";
+    });
+  });
+})();
+</script>
 </body>
 </html>
