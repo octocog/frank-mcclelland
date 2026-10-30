@@ -256,6 +256,16 @@ footer{background:var(--olive);color:var(--paper);margin-top:30px;padding:0 0 52
   .mosaic{grid-template-columns:repeat(2,1fr)}
   .mosaic .tall,.mosaic .tall img{grid-row:auto;height:270px}
 }
+
+picture{display:contents}picture>source{display:none}
+.bg-bread{background-image:url('img/r/band-bread-1280.jpg');background-image:image-set(url('img/r/band-bread-1280.webp') type('image/webp'),url('img/r/band-bread-1280.jpg') type('image/jpeg'))}
+@media (min-width:981px){.bg-bread{background-image:url('img/r/band-bread-1920.jpg');background-image:image-set(url('img/r/band-bread-1920.webp') type('image/webp'),url('img/r/band-bread-1920.jpg') type('image/jpeg'))}}
+.bg-cm{background-image:url('img/r/band-cm-1280.jpg');background-image:image-set(url('img/r/band-cm-1280.webp') type('image/webp'),url('img/r/band-cm-1280.jpg') type('image/jpeg'))}
+@media (min-width:981px){.bg-cm{background-image:url('img/r/band-cm-1920.jpg');background-image:image-set(url('img/r/band-cm-1920.webp') type('image/webp'),url('img/r/band-cm-1920.jpg') type('image/jpeg'))}}
+.bg-harvest{background-image:url('img/r/band-harvest-1280.jpg');background-image:image-set(url('img/r/band-harvest-1280.webp') type('image/webp'),url('img/r/band-harvest-1280.jpg') type('image/jpeg'))}
+@media (min-width:981px){.bg-harvest{background-image:url('img/r/band-harvest-1920.jpg');background-image:image-set(url('img/r/band-harvest-1920.webp') type('image/webp'),url('img/r/band-harvest-1920.jpg') type('image/jpeg'))}}
+.bg-fire{background-image:url('img/r/fire-fish-1280.jpg');background-image:image-set(url('img/r/fire-fish-1280.webp') type('image/webp'),url('img/r/fire-fish-1280.jpg') type('image/jpeg'))}
+@media (min-width:981px){.bg-fire{background-image:url('img/r/fire-fish-1400.jpg');background-image:image-set(url('img/r/fire-fish-1400.webp') type('image/webp'),url('img/r/fire-fish-1400.jpg') type('image/jpeg'))}}
 </style>
 <script type="application/ld+json">
 {
@@ -286,8 +296,7 @@ footer{background:var(--olive);color:var(--paper);margin-top:30px;padding:0 0 52
 
 <header class="top" id="top">
   <a class="brand" href="#top" aria-label="Atelier Frank McClelland">
-    <img src="img/brand/logo-lockup.png" width="1200" height="1248"
-         alt="Atelier Frank McClelland. Cuisinier. Farmer. Artist.">
+    <picture><source type="image/webp" srcset="img/r/logo-lockup-248.webp 248w, img/r/logo-lockup-496.webp 496w" sizes="clamp(186px,21vw,248px)"><img src="img/r/logo-lockup-496.png" srcset="img/r/logo-lockup-248.png 248w, img/r/logo-lockup-496.png 496w" sizes="clamp(186px,21vw,248px)" width="1200" height="1248" alt="Atelier Frank McClelland. Cuisinier. Farmer. Artist." decoding="async" loading="lazy"></picture>
   </a>
   <nav class="nav"><a href="#media">The work</a><a href="#works">Catalog</a>
     <a href="#recognition">Recognition</a><a href="#now">Now</a></nav>
@@ -302,13 +311,13 @@ footer{background:var(--olive);color:var(--paper);margin-top:30px;padding:0 0 52
   </div>
 </div>
 <div class="hero-plate bleed">
-  <img src="img/hero-wide.jpg" alt="Frank McClelland among the tomato rows at Apple Street Farm">
+  <picture><source type="image/webp" srcset="img/r/hero-wide-960.webp 960w, img/r/hero-wide-1440.webp 1440w, img/r/hero-wide-1920.webp 1920w" sizes="100vw"><img src="img/r/hero-wide-1920.jpg" srcset="img/r/hero-wide-960.jpg 960w, img/r/hero-wide-1440.jpg 1440w, img/r/hero-wide-1920.jpg 1920w" sizes="100vw" width="2100" height="1400" alt="Frank McClelland among the tomato rows at Apple Street Farm" decoding="async" loading="eager" fetchpriority="high"></picture>
 </div>
 <p class="hero-cap"><b>Pl. I</b>Apple Street Farm, Essex, Massachusetts</p>
 
 <div id="media"></div>
 
-<div class="band bleed" style="background-image:url('img/band-bread.jpg')">
+<div class="band bleed bg-bread">
   <div class="inner"><div class="panel">
     <span class="n">Expression i</span>
     <h2>Food</h2>
@@ -319,7 +328,7 @@ footer{background:var(--olive);color:var(--paper);margin-top:30px;padding:0 0 52
   </div></div>
 </div>
 
-<div class="band bleed right" style="background-image:url('img/band-cm.jpg')">
+<div class="band bleed right bg-cm">
   <div class="inner"><div class="panel">
     <span class="n">Expression ii</span>
     <h2>Hospitality</h2>
@@ -329,7 +338,7 @@ footer{background:var(--olive);color:var(--paper);margin-top:30px;padding:0 0 52
   </div></div>
 </div>
 
-<div class="band bleed" style="background-image:url('img/band-harvest.jpg')">
+<div class="band bleed bg-harvest">
   <div class="inner"><div class="panel">
     <span class="n">Expression iii</span>
     <h2>Cultivation</h2>
@@ -351,7 +360,7 @@ footer{background:var(--olive);color:var(--paper);margin-top:30px;padding:0 0 52
 <div class="wrap">
   <section class="bio" id="bio">
     <div class="bio-img">
-      <img src="img/portrait-farmstand.jpg" alt="Frank McClelland at a farm stand in Essex">
+      <picture><source type="image/webp" srcset="img/r/portrait-farmstand-400.webp 400w, img/r/portrait-farmstand-760.webp 760w, img/r/portrait-farmstand-1000.webp 1000w" sizes="(max-width:980px) 92vw, 379px"><img src="img/r/portrait-farmstand-1000.jpg" srcset="img/r/portrait-farmstand-400.jpg 400w, img/r/portrait-farmstand-760.jpg 760w, img/r/portrait-farmstand-1000.jpg 1000w" sizes="(max-width:980px) 92vw, 379px" width="1000" height="1500" alt="Frank McClelland at a farm stand in Essex" decoding="async" loading="lazy"></picture>
     </div>
     <div class="bio-txt">
       <p class="lab olive">Biography</p>
@@ -415,7 +424,7 @@ footer{background:var(--olive);color:var(--paper);margin-top:30px;padding:0 0 52
 </div>
 
 <div class="work-big bleed flip">
-  <div class="wb-img"><img src="img/band-farm.jpg" alt="Frank McClelland cooking at Apple Street Farm"></div>
+  <div class="wb-img"><picture><source type="image/webp" srcset="img/r/band-farm-600.webp 600w, img/r/band-farm-1160.webp 1160w" sizes="(max-width:980px) 100vw, 576px"><img src="img/r/band-farm-1160.jpg" srcset="img/r/band-farm-600.jpg 600w, img/r/band-farm-1160.jpg 1160w" sizes="(max-width:980px) 100vw, 576px" width="1500" height="1000" alt="Frank McClelland cooking at Apple Street Farm" decoding="async" loading="lazy"></picture></div>
   <div class="wb-txt">
     <span class="yr">Essex, Massachusetts</span>
     <h3 style="margin-top:10px">Apple Street Farm</h3>
@@ -434,18 +443,18 @@ footer{background:var(--olive);color:var(--paper);margin-top:30px;padding:0 0 52
 <div class="wrap">
   <div class="work-row">
     <div class="c">
-      <img src="img/pass-whites.jpg" alt="Frank McClelland in chef whites at the pass">
+      <picture><source type="image/webp" srcset="img/r/pass-whites-340.webp 340w, img/r/pass-whites-680.webp 680w" sizes="(max-width:980px) 92vw, 328px"><img src="img/r/pass-whites-680.jpg" srcset="img/r/pass-whites-340.jpg 340w, img/r/pass-whites-680.jpg 680w" sizes="(max-width:980px) 92vw, 328px" width="1600" height="738" alt="Frank McClelland in chef whites at the pass" decoding="async" loading="lazy"></picture>
       <h3>Sel de la Terre</h3><p class="role">Chef &amp; Owner &nbsp;·&nbsp; Boston</p>
       <p>The casual counterpart to L&rsquo;Espalier. French bistro cooking and a boulangerie, built
         to reach people on a weekday rather than an anniversary.</p>
     </div>
     <div class="c">
-      <img class="bookcov" src="img/book-wine-mondays.jpg" alt="Wine Mondays book cover">
+      <picture><source type="image/webp" srcset="img/r/book-wine-mondays-340.webp 340w, img/r/book-wine-mondays-680.webp 680w" sizes="(max-width:980px) 92vw, 328px"><img class="bookcov" src="img/r/book-wine-mondays-680.jpg" srcset="img/r/book-wine-mondays-340.jpg 340w, img/r/book-wine-mondays-680.jpg 680w" sizes="(max-width:980px) 92vw, 328px" width="715" height="900" alt="Wine Mondays book cover" decoding="async" loading="lazy"></picture>
       <h3>Wine Mondays</h3><p class="role">With Christie Matheson &nbsp;·&nbsp; Harvard Common Press, 2008</p>
       <p>Simple wine pairings with seasonal menus, built from the long running Monday night wine dinners at L&rsquo;Espalier.</p>
     </div>
     <div class="c">
-      <img src="img/card-crudo.jpg" alt="A composed crudo plated at FRANK">
+      <picture><source type="image/webp" srcset="img/r/card-crudo-340.webp 340w, img/r/card-crudo-680.webp 680w" sizes="(max-width:980px) 92vw, 328px"><img src="img/r/card-crudo-680.jpg" srcset="img/r/card-crudo-340.jpg 340w, img/r/card-crudo-680.jpg 680w" sizes="(max-width:980px) 92vw, 328px" width="1100" height="846" alt="A composed crudo plated at FRANK" decoding="async" loading="lazy"></picture>
       <h3>FRANK</h3><p class="role">Chef &amp; Owner &nbsp;·&nbsp; Beverly, 2019&ndash;2023</p>
       <p>Restaurant, market and shop. Food made daily in a scratch kitchen.</p>
     </div>
@@ -453,13 +462,13 @@ footer{background:var(--olive);color:var(--paper);margin-top:30px;padding:0 0 52
 </div>
 
 <div class="mosaic bleed" style="margin-top:58px">
-  <img src="img/band-dessert.jpg" alt="Plated dessert">
-  <img src="img/band-firepit.jpg" alt="Fire pit on the shore">
-  <img src="img/band-notebook.jpg" alt="Handwritten menu notebook">
-  <img src="img/band-lobster.jpg" alt="Lobster roll">
+  <picture><source type="image/webp" srcset="img/r/band-dessert-480.webp 480w, img/r/band-dessert-960.webp 960w" sizes="(max-width:980px) 50vw, 25vw"><img src="img/r/band-dessert-960.jpg" srcset="img/r/band-dessert-480.jpg 480w, img/r/band-dessert-960.jpg 960w" sizes="(max-width:980px) 50vw, 25vw" width="2000" height="1333" alt="Plated dessert" decoding="async" loading="lazy"></picture>
+  <picture><source type="image/webp" srcset="img/r/band-firepit-480.webp 480w, img/r/band-firepit-960.webp 960w" sizes="(max-width:980px) 50vw, 25vw"><img src="img/r/band-firepit-960.jpg" srcset="img/r/band-firepit-480.jpg 480w, img/r/band-firepit-960.jpg 960w" sizes="(max-width:980px) 50vw, 25vw" width="2000" height="1125" alt="Fire pit on the shore" decoding="async" loading="lazy"></picture>
+  <picture><source type="image/webp" srcset="img/r/band-notebook-480.webp 480w, img/r/band-notebook-960.webp 960w" sizes="(max-width:980px) 50vw, 25vw"><img src="img/r/band-notebook-960.jpg" srcset="img/r/band-notebook-480.jpg 480w, img/r/band-notebook-960.jpg 960w" sizes="(max-width:980px) 50vw, 25vw" width="1275" height="1700" alt="Handwritten menu notebook" decoding="async" loading="lazy"></picture>
+  <picture><source type="image/webp" srcset="img/r/band-lobster-480.webp 480w, img/r/band-lobster-960.webp 960w" sizes="(max-width:980px) 50vw, 25vw"><img src="img/r/band-lobster-960.jpg" srcset="img/r/band-lobster-480.jpg 480w, img/r/band-lobster-960.jpg 960w" sizes="(max-width:980px) 50vw, 25vw" width="2000" height="1333" alt="Lobster roll" decoding="async" loading="lazy"></picture>
 </div>
 
-<div class="rec-band bleed" id="recognition" style="background-image:url('img/fire-fish.jpg')">
+<div class="rec-band bleed bg-fire" id="recognition">
   <div class="rec-wrap"><div class="rec-card">
     <h2>Recognition</h2>
     <div class="r"><span class="y">2007</span><span class="t"><b>James Beard Award</b>, Best Chef: Northeast</span></div>
@@ -515,8 +524,7 @@ footer{background:var(--olive);color:var(--paper);margin-top:30px;padding:0 0 52
 </div>
 
 <footer>
-  <div class="sign"><img src="img/brand/chicken-solid.png" width="1000" height="1133"
-    alt="" aria-hidden="true" loading="lazy"></div>
+  <div class="sign"><picture><source type="image/webp" srcset="img/r/chicken-solid-140.webp 140w, img/r/chicken-solid-280.webp 280w" sizes="clamp(104px,11vw,138px)"><img src="img/r/chicken-solid-280.png" srcset="img/r/chicken-solid-140.png 140w, img/r/chicken-solid-280.png 280w" sizes="clamp(104px,11vw,138px)" width="1000" height="1133" alt="" decoding="async" aria-hidden="true" loading="lazy"></picture></div>
   <div class="wrap"><div class="frow">
     <span>Atelier Frank McClelland</span>
     <span>Cuisinier &nbsp;·&nbsp; Farmer &nbsp;·&nbsp; Artist</span>
