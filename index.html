@@ -25,17 +25,18 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap">
 <style>
 :root{
-  /* derived from the approved Atelier identity */
-  --paper:#FCF9F2; --paper-2:#F4EFE3; --card:#FFFDF8;
-  --ink:#1F0B0D; --ink2:#5C4A46; --ink3:#7B6C66;
-  --olive:#646D2E; --olive-dk:#515823; --olive-pale:#E6E8D6;
-  --gold:#B6932F; --red:#C22628; --rule:#DED6C6;
+  /* Base five are verbatim from Atelier Brand Guidelines [2026] p6.
+     Tints keep their original relationship to those bases. */
+  --paper:#FAF6ED; --paper-2:#F2ECDE; --card:#FDFAF3;
+  --ink:#200D0F; --ink2:#5D4C48; --ink3:#7C6E68;
+  --olive:#646B2E; --olive-dk:#515623; --olive-pale:#E6E6D6;
+  --gold:#B5922F; --red:#C02026; --rule:#DCD3C1;
   --f-dis:Fraunces,Georgia,serif; --f-body:"EB Garamond",Georgia,serif;
   --wrap:1180px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-variant-numeric:oldstyle-nums;
   font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{display:block;max-width:100%}
 a{color:inherit}
@@ -74,8 +75,8 @@ p{margin:0 0 1em}
   background-size:cover;background-position:center}
 .band .inner{max-width:var(--wrap);margin:0 auto;padding:0 76px;width:100%;display:flex}
 .band.right .inner{justify-content:flex-end}
-.panel{background:rgba(250,249,245,.955);padding:44px 46px 46px;max-width:452px;
-  box-shadow:0 20px 60px rgba(28,26,23,.2)}
+.panel{background:rgba(250,246,237,.955);padding:44px 46px 46px;max-width:452px;
+  box-shadow:0 20px 60px rgba(32,13,15,.2)}
 .panel .n{font-size:11px;letter-spacing:.24em;color:var(--gold);text-transform:uppercase}
 .panel h2{font-size:46px;color:var(--olive);margin:8px 0 0;font-weight:400;line-height:1}
 .panel p{font-size:17.5px;color:var(--ink2);margin:16px 0 0}
@@ -186,8 +187,8 @@ section{padding:70px 0}
 /* recognition over an image */
 .rec-band{position:relative;background-size:cover;background-position:center 60%;padding:84px 0}
 .rec-wrap{max-width:var(--wrap);margin:0 auto;padding:0 76px}
-.rec-card{background:rgba(250,249,245,.96);padding:46px 50px 40px;max-width:720px;
-  box-shadow:0 20px 60px rgba(28,26,23,.2)}
+.rec-card{background:rgba(250,246,237,.96);padding:46px 50px 40px;max-width:720px;
+  box-shadow:0 20px 60px rgba(32,13,15,.2)}
 .rec-card h2{font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink2);
   font-weight:400;margin-bottom:22px}
 .rec-card div.r{display:grid;grid-template-columns:118px 1fr;gap:18px;padding:12px 0;
@@ -235,7 +236,7 @@ footer{background:var(--olive);color:var(--paper);margin-top:30px;padding:0 0 52
 .sign img{width:clamp(104px,11vw,138px);height:auto;display:inline-block}
 .frow{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
   font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--paper);
-  opacity:.92;border-top:1px solid rgba(252,249,242,.26);padding-top:26px}
+  opacity:.92;border-top:1px solid rgba(250,246,237,.26);padding-top:26px}
 
 
 @media (max-width:980px){
