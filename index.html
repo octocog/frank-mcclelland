@@ -267,6 +267,20 @@ picture{display:contents}picture>source{display:none}
 @media (min-width:981px){.bg-harvest{background-image:url('img/r/band-harvest-1920.jpg');background-image:image-set(url('img/r/band-harvest-1920.webp') type('image/webp'),url('img/r/band-harvest-1920.jpg') type('image/jpeg'))}}
 .bg-fire{background-image:url('img/r/fire-fish-1280.jpg');background-image:image-set(url('img/r/fire-fish-1280.webp') type('image/webp'),url('img/r/fire-fish-1280.jpg') type('image/jpeg'))}
 @media (min-width:981px){.bg-fire{background-image:url('img/r/fire-fish-1400.jpg');background-image:image-set(url('img/r/fire-fish-1400.webp') type('image/webp'),url('img/r/fire-fish-1400.jpg') type('image/jpeg'))}}
+
+/* Sits on its own ground purely so it does not read as a second copy of the
+   Now section directly below it, which shares its eyebrow and heading shape. */
+.purpose{background:var(--olive-pale);padding:84px 0 86px}
+.purpose .inner{max-width:var(--wrap);margin:0 auto;padding:0 76px;
+  display:grid;grid-template-columns:.86fr 1.14fr;gap:56px;align-items:start}
+.purpose-h{font-family:var(--f-dis);font-weight:300;font-size:clamp(31px,3.9vw,50px);
+  line-height:1.05;margin:14px 0 0;letter-spacing:-.014em}
+.purpose-h em{font-style:italic;color:var(--olive-dk)}
+.purpose-r p{font-size:19px;line-height:1.62;color:var(--ink2);margin:0 0 1.05em;max-width:52ch}
+.purpose-r p:first-child{margin-top:4px}
+@media (max-width:980px){.purpose .inner{grid-template-columns:1fr;gap:26px}}
+.ask-kicker{font-family:var(--f-dis);font-style:italic;font-size:18px;
+  color:var(--olive);margin:0 0 8px}
 </style>
 <script type="application/ld+json">
 {
@@ -307,7 +321,7 @@ picture{display:contents}picture>source{display:none}
   <div class="hero-txt">
     <p class="lab olive">Essex, Massachusetts</p>
     <h1 style="margin-top:18px">A seasoned artist working in food, hospitality and <em>cultivation</em>.</h1>
-    <p class="lede">Forty five years of one vision, carried forward by different vehicles.
+    <p class="lede">Forty five years of one vision, carried forward by different mediums.
       The passion has never changed. Only the expression.</p>
   </div>
 </div>
@@ -489,6 +503,25 @@ picture{display:contents}picture>source{display:none}
   </div>
 </div>
 
+<div class="purpose bleed" id="purpose">
+  <div class="inner">
+    <div class="purpose-l">
+      <p class="lab olive">Atelier</p>
+      <h2 class="purpose-h">The good fortune to cook for <em>others</em>.</h2>
+    </div>
+    <div class="purpose-r">
+      <p>At the heart of Atelier is a lifelong passion for nurturing people through food. It begins
+        with the finest ingredients the local farmers and the seasons have to offer, allowing them
+        to inspire a culinary experience created for the people gathered around the table.</p>
+      <p>Every occasion is different and personal. His purpose is to capture the spirit of the
+        moment through spontaneous cuisine, thoughtful hospitality, and the simple joy of caring
+        for others.</p>
+      <p>More than a meal, each experience should nourish the body and leave people feeling
+        genuinely cared for and uplifted.</p>
+    </div>
+  </div>
+</div>
+
 <div class="wrap">
   <section class="now" id="now">
     <p class="lab olive">Now</p>
@@ -497,9 +530,11 @@ picture{display:contents}picture>source{display:none}
       world: that food is better when you know where it came from, and best when you grew it
       yourself. Frank is looking for the next canvas.</p>
     <div class="asks one">
-      <div><h3>Consulting &amp; Cooking</h3><p>Menu, kitchen, sourcing and operations for restaurants
-        and food businesses that want the standard without the guesswork. Or cooking and catering for
-        you and your guests.</p></div>
+      <div><h3>Consulting &amp; Cooking</h3>
+        <p class="ask-kicker">Created for the moment.</p>
+        <p>Every occasion is different and personal. Menu, kitchen, sourcing and operations for
+        restaurants and food businesses that want the standard without the guesswork. Or cooking
+        and catering for you and your guests.</p></div>
     </div>
     <div class="reach">
       <div class="reach-head">
