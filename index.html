@@ -123,13 +123,12 @@ p{margin:0 0 1em}
 /* press pull quote */
 .press{background:var(--card);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
   padding:76px 0 72px}
-.press .inner{max-width:var(--wrap);margin:0 auto;padding:0 76px;position:relative}
-.press .mark{position:absolute;left:34px;top:-26px;font-family:var(--f-dis);font-weight:300;
-  font-size:150px;line-height:1;color:var(--olive);opacity:.46;pointer-events:none}
-.press blockquote{margin:0;font-family:var(--f-dis);font-weight:300;font-style:italic;
-  font-size:clamp(27px,3.5vw,46px);line-height:1.22;letter-spacing:-.014em;max-width:24ch;
-  position:relative}
-.press .attr{margin:30px 0 0;padding-top:18px;border-top:1px solid var(--rule);max-width:24ch;white-space:nowrap;
+.press .inner{max-width:var(--wrap);margin:0 auto;padding:0 76px;text-align:center}
+.press .mark{display:block;font-family:var(--f-dis);font-weight:300;
+  font-size:140px;line-height:.46;color:var(--olive);opacity:.46;margin:0 auto}
+.press blockquote{margin:0 auto;font-family:var(--f-dis);font-weight:300;font-style:italic;
+  font-size:clamp(27px,3.5vw,46px);line-height:1.22;letter-spacing:-.014em;max-width:24ch}
+.press .attr{display:inline-block;margin:30px auto 0;padding-top:18px;border-top:1px solid var(--rule);white-space:nowrap;
   font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--olive-dk)}
 
 /* biography */
@@ -259,7 +258,6 @@ footer{background:var(--olive);color:var(--paper);margin-top:30px;padding:0 0 52
   .band{min-height:0;padding:70px 0}
   .panel{max-width:none}
   .work-big,.bio{grid-template-columns:1fr}
-  .press .mark{left:8px;font-size:100px;top:-18px}
   .bio-img img{height:340px}
   .lesp .stats{grid-template-columns:repeat(2,1fr);gap:26px}
   .lesp-grid{grid-template-columns:1fr;gap:28px}
